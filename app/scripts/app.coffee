@@ -5,7 +5,7 @@ angular.module('projectableApp', [
     'ngResource'
     'ngSanitize'
     'ngRoute'
-    'angularLocalStorage'
+    'localStorageModule'
   ])
   .config ($routeProvider) ->
     $routeProvider
