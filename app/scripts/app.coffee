@@ -1,15 +1,16 @@
 'use strict'
 
 angular.module('projectableApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
+    'ngCookies'
+    'ngResource'
+    'ngSanitize'
     'ngRoute'
+    'angularLocalStorage'
   ])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
+        controller: 'ProjectCtrl'
       .otherwise
         redirectTo: '/'

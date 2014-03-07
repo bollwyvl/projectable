@@ -57,6 +57,10 @@ module.exports = (grunt) ->
           ".tmp/scripts/{,*/}*.js"
           "<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}"
         ]
+      
+      less:
+        files: ["<%= yeoman.app %>/styles/{,*/}*.less"]
+        tasks: ["newer:less"]
 
 
     # The actual grunt server settings
@@ -121,7 +125,20 @@ module.exports = (grunt) ->
       app:
         html: "<%= yeoman.app %>/index.html"
         ignorePath: "<%= yeoman.app %>/"
+        exclude: [
+          "bootstrap"
+          "bootswatch"
+          "components-font-awesome"
+        ]
 
+    less:
+      default:
+        options:
+          sourceMap: true
+        files: [
+          src: ["<%= yeoman.app %>/styles/main.less"]
+          dest: "<%= yeoman.app %>/styles/main.css" 
+        ]
 
     # Compiles CoffeeScript to JavaScript
     coffee:

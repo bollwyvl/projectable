@@ -1,9 +1,10 @@
 'use strict'
 
 angular.module('projectableApp')
-  .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+  .controller 'ProjectCtrl', [
+    '$scope'
+    'storage'
+    ($scope, storage) ->
+      storage.bind $scope, 'projectName',
+        defaultValue: 'An Awesome Project'
+  ]
